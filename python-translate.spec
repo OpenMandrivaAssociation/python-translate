@@ -12,7 +12,6 @@ Source0: http://downloads.sourceforge.net/translate/%{oname}-%{version}.tar.bz2
 License: GPL
 Group: Development/Python
 Url: http://translate.sourceforge.net/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 BuildRequires: python-devel
 
