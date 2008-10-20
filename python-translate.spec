@@ -2,19 +2,19 @@
 %define oname %{pname}-toolkit
 %define name python-%{pname}
 %define version 1.0.1
-%define release %mkrel 4
+%define release %mkrel 5
 
 Summary: Software localization toolkit
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://downloads.sourceforge.net/translate/%{oname}-%{version}.tar.bz2
-License: GPL
+License: GPLv2+
 Group: Development/Python
 Url: http://translate.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
-BuildRequires: python-devel
+%py_requires -d
 
 %description
 The Translate Toolkit is a set of software and documentation designed
@@ -44,7 +44,7 @@ merge translations and perform various checks on PO files.
 
 %install
 rm -rf %{buildroot}
-./setup.py install --prefix=%{buildroot}%{_prefix}
+./setup.py install --root=%{buildroot}
 
 %clean
 rm -rf %{buildroot}
