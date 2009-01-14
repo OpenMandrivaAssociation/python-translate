@@ -14,6 +14,7 @@ Group: Development/Python
 Url: http://translate.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
+Provides: %{oname} = %{version}-%{release}
 %py_requires -d
 
 %description
