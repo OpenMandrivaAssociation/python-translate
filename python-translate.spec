@@ -2,7 +2,7 @@
 %define oname %{pname}-toolkit
 %define name python-%{pname}
 %define version 1.3.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Software localization toolkit
 Name: %{name}
@@ -14,6 +14,7 @@ Group: Development/Python
 Url: http://translate.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
+Requires: python-lxml
 Provides: %{oname} = %{version}-%{release}
 %py_requires -d
 
