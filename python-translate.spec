@@ -15,6 +15,7 @@ Url: http://translate.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 Requires: python-lxml
+Suggests: python-levenshtein
 Provides: %{oname} = %{version}-%{release}
 %py_requires -d
 
