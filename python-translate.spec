@@ -2,7 +2,7 @@
 %define oname %{pname}-toolkit
 %define name python-%{pname}
 %define version 1.5.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Software localization toolkit
 Name: %{name}
@@ -16,6 +16,11 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 Requires: python-lxml
 Suggests: python-levenshtein
+Suggests: python-psyco
+Suggests: python-simplejson
+Suggests: python-enchant
+Suggests: python-vobject
+Suggests: python-iniparse
 Provides: %{oname} = %{version}-%{release}
 %py_requires -d
 
