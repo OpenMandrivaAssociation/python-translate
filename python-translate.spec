@@ -1,7 +1,7 @@
 %define pname translate
 %define oname %{pname}-toolkit
 %define name python-%{pname}
-%define version 1.5.2
+%define version 1.5.3
 %define release %mkrel 1
 
 Summary: Software localization toolkit
