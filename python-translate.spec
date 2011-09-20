@@ -1,13 +1,11 @@
 %define pname translate
 %define oname %{pname}-toolkit
 %define name python-%{pname}
-%define version 1.8.1
-%define release %mkrel 1
 
 Summary: Software localization toolkit
 Name: %{name}
-Version: %{version}
-Release: %{release}
+Version: 1.9.0
+Release: %mkrel 1
 Source0: http://downloads.sourceforge.net/translate/%{oname}-%{version}.tar.bz2
 License: GPLv2+
 Group: Development/Python
