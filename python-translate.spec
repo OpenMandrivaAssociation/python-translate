@@ -61,8 +61,8 @@ rm -rf %{buildroot}
 ./setup.py install --root=%{buildroot}
 
 # (Fedora) create manpages
-mkdir -p $RPM_BUILD_ROOT/%{_mandir}/man1
-for program in $RPM_BUILD_ROOT/%{_bindir}/*; do
+mkdir -p %{buildroot}/%{_mandir}/man1
+for program in %{buildroot}/%{_bindir}/*; do
     case $(basename $program) in
       pocompendium|poen|pomigrate2|popuretext|poreencode|posplit|\
       pocount|poglossary|lookupclient.py|tmserver|build_tmdb|\
@@ -70,8 +70,8 @@ for program in $RPM_BUILD_ROOT/%{_bindir}/*; do
        ;;
       *)
         LC_ALL=C PYTHONPATH=. $program --manpage \
-          >  $RPM_BUILD_ROOT/%{_mandir}/man1/$(basename $program).1 \
-          || rm -f $RPM_BUILD_ROOT/%{_mandir}/man1/$(basename $program).1
+          >  %{buildroot}/%{_mandir}/man1/$(basename $program).1 \
+          || rm -f %{buildroot}/%{_mandir}/man1/$(basename $program).1
           ;;
     esac
 done
