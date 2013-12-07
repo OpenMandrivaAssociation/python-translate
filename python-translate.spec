@@ -4,7 +4,7 @@
 Summary:	Software localization toolkit
 Name:		python-%{pname}
 Version:	1.9.0
-Release:	5
+Release:	6
 License:	GPLv2+
 Group:		Development/Python
 Url:		http://translate.sourceforge.net/
