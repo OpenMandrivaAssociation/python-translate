@@ -4,7 +4,7 @@
 Summary: Software localization toolkit
 Name:    python-%{pname}
 Version: 1.9.0
-Release: 3
+Release: 4
 Source0: http://downloads.sourceforge.net/translate/%{oname}-%{version}.tar.bz2
 License: GPLv2+
 Group: Development/Python
