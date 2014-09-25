@@ -3,12 +3,12 @@
 
 Summary:	Software localization toolkit
 Name:		python-%{pname}
-Version:	1.9.0
-Release:	9
+Version:	1.12.0
+Release:	1
 License:	GPLv2+
 Group:		Development/Python
 Url:		http://translate.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/translate/%{oname}-%{version}.tar.bz2
+Source0:	http://sourceforge.net/projects/translate/files/Translate%20Toolkit/1.12.0/translate-toolkit-%{version}.tar.bz2
 BuildArch:	noarch
 # (Fedoar) those are needed for mange page generation
 BuildRequires:	python-lxml
@@ -82,4 +82,3 @@ find %{buildroot}%{py_puresitedir} -name "*py" -perm 644 -exec sed -i '/#!\/usr\
 %{py_puresitedir}/%{pname}
 %{py_puresitedir}/translate_toolkit-%{version}-py%{py_ver}.egg-info
 %{_mandir}/man1/*
-
