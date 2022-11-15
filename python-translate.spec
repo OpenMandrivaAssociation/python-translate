@@ -3,17 +3,16 @@
 
 Summary:	Software localization toolkit
 Name:		python-%{pname}
-Version:	1.9.0
-Release:	9
+Version:	3.6.1
+Release:	1
 License:	GPLv2+
 Group:		Development/Python
 Url:		http://translate.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/translate/%{oname}-%{version}.tar.bz2
+Source0:	https://files.pythonhosted.org/packages/source/t/translate/%{pname}-%{version}.tar.gz
 BuildArch:	noarch
-# (Fedoar) those are needed for mange page generation
 BuildRequires:	python-lxml
 BuildRequires:	python-simplejson
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 Requires:	python-lxml
 Requires:	python-levenshtein
 Requires:	python-simplejson
@@ -49,37 +48,15 @@ Also part of the Toolkit are Python programs to create word counts,
 merge translations and perform various checks on PO files.
 
 %prep
-%setup -qn %{oname}-%{version}
+%autosetup -p1 -n %{pname}-%{version}
 
 %build
-./setup.py build
+%py_build
 
 %install
-./setup.py install --root=%{buildroot}
-
-# (Fedora) create manpages
-mkdir -p %{buildroot}/%{_mandir}/man1
-for program in %{buildroot}/%{_bindir}/*; do
-    case $(basename $program) in
-      pocompendium|poen|pomigrate2|popuretext|poreencode|posplit|\
-      pocount|poglossary|lookupclient.py|tmserver|build_tmdb|\
-      junitmsgfmt)
-       ;;
-      *)
-        LC_ALL=C PYTHONPATH=. $program --manpage \
-          >  %{buildroot}/%{_mandir}/man1/$(basename $program).1 \
-          || rm -f %{buildroot}/%{_mandir}/man1/$(basename $program).1
-          ;;
-    esac
-done
-
-# Drop shebang from non-executable scripts to make rpmlint happy
-find %{buildroot}%{py_puresitedir} -name "*py" -perm 644 -exec sed -i '/#!\/usr\/bin\/env python/d' {} \;
+%py_install
 
 %files
-%doc %{pname}/README
 %{_bindir}/*
 %{py_puresitedir}/%{pname}
-%{py_puresitedir}/translate_toolkit-%{version}-py%{py_ver}.egg-info
-%{_mandir}/man1/*
-
+%{py_puresitedir}/translate-%{version}-py%{py_ver}.egg-info
