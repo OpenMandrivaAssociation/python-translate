@@ -14,6 +14,7 @@ BuildRequires:	python-lxml
 BuildRequires:	python-simplejson
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(pip)
 Requires:	python-lxml
 Requires:	python-levenshtein
 Requires:	python-simplejson
