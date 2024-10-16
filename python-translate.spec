@@ -7,7 +7,7 @@ Version:	3.6.1
 Release:	1
 License:	GPLv2+
 Group:		Development/Python
-Url:		http://translate.sourceforge.net/
+Url:		https://translate.sourceforge.net/
 Source0:	https://files.pythonhosted.org/packages/source/t/translate/%{pname}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-lxml
