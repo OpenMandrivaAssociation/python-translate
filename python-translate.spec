@@ -3,8 +3,8 @@
 
 Summary:	Software localization toolkit
 Name:		python-%{pname}
-Version:	3.6.1
-Release:	2
+Version:	3.8.0
+Release:	1
 License:	GPLv2+
 Group:		Development/Python
 Url:		https://translate.sourceforge.net/
