@@ -3,7 +3,7 @@
 
 Summary:	Software localization toolkit
 Name:		python-%{pname}
-Version:	3.8.0
+Version:	3.8.1
 Release:	1
 License:	GPLv2+
 Group:		Development/Python
@@ -50,7 +50,7 @@ Also part of the Toolkit are Python programs to create word counts,
 merge translations and perform various checks on PO files.
 
 %prep
-%autosetup -p1 -n %{pname}-%{version}
+%autosetup -p1 -n translate-3.8.1
 
 %build
 %py_build
